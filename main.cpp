@@ -92,7 +92,7 @@ public:
                     return result;
                 }
                 else {
-                    std::cout << "Error: disallowed character sequence\n";
+                    std::cout << "Error: disallowed character sequence: identifier or number is expected\n";
                     return result;
                 }
 
@@ -112,12 +112,12 @@ public:
                 else if (is_end(ch)) {
                     result.push_back({
                         TokenType::ID, _Str.substr(start_tok_pos, i - start_tok_pos)
-                        });
+                    });
 
                     return result;
                 }
                 else {
-                    std::cout << "Error: disallowed character sequence\n";
+                    std::cout << "Error: disallowed character sequence: identifier or number is expected\n";
                     return result;
                 }
                 break;
@@ -129,7 +129,7 @@ public:
 
                     result.push_back({
                         TokenType::NUM, _Str.substr(start_tok_pos, i - start_tok_pos)
-                        });
+                    });
                 }
                 else if (is_middle_num(ch)) {
                     state = Tokenizer::ParseState::m_num;
@@ -137,12 +137,12 @@ public:
                 else if (is_end(ch)) {
                     result.push_back({
                         TokenType::NUM, _Str.substr(start_tok_pos, i - start_tok_pos)
-                        });
+                    });
 
                     return result;
                 }
                 else {
-                    std::cout << "Error: disallowed character sequence\n";
+                    std::cout << "Error: disallowed character sequence: number is expected\n";
                     return result;
                 }
 
@@ -189,15 +189,17 @@ public:
 
 int main() {
     std::vector<std::string> test = {
-        "123 456",
+        "c123  b 456 a",
         "   hello\tworld   ",
         "123as23s",
         "C++ is good language",
         "  print a 1    2 3 4",
+        "for i in range",
+        "clear console 1 2 3",
     };
 
     for (auto& str : test) {
-        std::cout << "'" << str << "' -> ";
+        std::cout << ">> '" << str << "'\n";
         Tokenizer::print_tokens(Tokenizer::parse(str));
         std::cout << "\n";
     }
