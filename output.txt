@@ -1,0 +1,48 @@
+>> 'c123  b 456 a'
+[
+        (id: 'c123'),
+        (id: 'b'),
+        (num: '456'),
+        (id: 'a')
+]
+
+>> '   hello    world   '
+[
+        (id: 'hello'),
+        (id: 'world')
+]
+
+>> '123as23s'
+Error: disallowed character sequence: number is expected
+
+
+>> 'C++ is good language'
+Error: disallowed symbol '+'
+
+
+>> '  print a 1    2 3 4'
+[
+        (id: 'print'),
+        (id: 'a'),
+        (num: '1'),
+        (num: '2'),
+        (num: '3'),
+        (num: '4')
+]
+
+>> 'for i in range'
+[
+        (id: 'for'),
+        (id: 'i'),
+        (id: 'in'),
+        (id: 'range')
+]
+
+>> 'clear console 1 2 3'
+[
+        (id: 'clear'),
+        (id: 'console'),
+        (num: '1'),
+        (num: '2'),
+        (num: '3')
+]
