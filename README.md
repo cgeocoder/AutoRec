@@ -43,5 +43,5 @@
   m(num) -> (error)<br/>
 
 
-  ![vis_test](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+  ![vis_test](https://github.com/cgeocoder/AutoRec/blob/main/vis_test.png)
 
