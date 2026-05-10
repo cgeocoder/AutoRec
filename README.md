@@ -43,5 +43,3 @@
   m(num) -> (error)<br/>
 
 
-  ![vis_test](https://github.com/cgeocoder/AutoRec/blob/main/vis_test.png)
-
